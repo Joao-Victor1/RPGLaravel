@@ -1,7 +1,138 @@
+/* General */
 *{
     font-family: Sofia Sans;
 }
 
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.row{
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-primary{
+    background-color: #422680;
+    border: 2px solid #2B0659;
+}
+
+.btn-primary:hover{
+    background-color: #2B0659;
+    border-color: #2B0659;
+}
+
+/* Navbar */
 #navbar img{
-    width: 50px;
+    width: 60px;
+}
+
+#navbar{
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+#navbar a{
+    font-size: 18px;
+    color: #757575;
+}
+
+#navbar a:hover{
+    color: #2B0659;
+}
+
+/* Search Container */
+#search-container{
+    background-image: url("../img/search.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 50px;
+    text-align: center;
+}
+
+#search-container h1{
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+#search-container form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Campaigns list */
+#campanhas-container{
+    padding: 50px; 
+}
+
+#campanhas-container h2{
+    margin-bottom: 10px;
+}
+
+#campanhas-container .subtitle{
+    color: #757575;
+    margin-bottom: 30px;
+}
+
+#cards-container{
+    display: flex;
+}
+
+#campanhas-container .card{
+    flex: 1 1 0;
+    max-width: 25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: 5px;
+}
+
+#campanhas-container img{
+    max-height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card .card-date{
+    font-size: 14px;
+    color: #757575;
+}
+
+.card .card-title{
+    color: #212121;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card-participants{
+    font-size: 15px;
+    color: #757575;
+}
+
+/* Footer */
+
+footer{
+    text-align: center;
+    background-color: #353E48;
+    color: #FFF;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p{
+    margin-bottom: 0;
 }

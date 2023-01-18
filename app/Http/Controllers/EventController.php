@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Campanha;
 
 class EventController extends Controller
 {
     public function index(){
-        return view('welcome');
+
+        $campanhas = Campanha::all();
+
+        return view('welcome', ['campanhas' => $campanhas]);
     }
 
     public function create(){
