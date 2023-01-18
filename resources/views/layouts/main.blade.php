@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/img/d20-icon.png">
 
         <title>@yield('title')</title>
 
@@ -32,7 +33,7 @@
                             <a href="/" class="nav-link">Campanhas</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Criar Campanha</a>
+                            <a href="/events/create" class="nav-link">Criar Campanha</a>
                         </li>
                         <li class="nav-item">
                             <a href="/" class="nav-link">Entrar</a>
@@ -51,5 +52,6 @@
         <footer>
             <p>RPG Finder &copy; 2023</p>
         </footer>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </body>
 </html>
