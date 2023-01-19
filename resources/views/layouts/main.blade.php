@@ -44,11 +44,17 @@
                     </ul>
                 </div>
             </nav>
-        </header>
-
-
-        @yield('content')
-
+        </header>       
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <p class="alert alert-success">{{ session('msg') }}</p>
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </main>
         <footer>
             <p>RPG Finder &copy; 2023</p>
         </footer>

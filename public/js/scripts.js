@@ -1,1 +1,1 @@
-console.log("Teste de interação")
+console.log("Teste de console")
