@@ -49,7 +49,7 @@ class EventController extends Controller
     public function show($id){
 
         $campanha = Campanha::findOrFail($id);
-        return view('events.show', ['event' => $campanha]);
+        return view('events.show', compact('campanha')); 
     }
 }
 
