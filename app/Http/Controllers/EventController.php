@@ -4,14 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Campanha;
+use App\Models\User;
 
 class EventController extends Controller
 {
     public function index(){
+        
+        $search = request('search');
 
-        $campanhas = Campanha::all();
+        if($search){
+            $campanhas = Campanha::where([
+                ['title', 'like', '%' . $search . '%']
+            ])->get();
+        }else{
+            $campanhas = Campanha::all();
+        }
 
-        return view('index', ['campanhas' => $campanhas]);
+        return view('index', ['campanhas' => $campanhas, 'search' => $search]);
     }
 
     public function create(){
@@ -24,8 +33,10 @@ class EventController extends Controller
         $campanha->title = $request->title;
         $campanha->location = $request->local;
         $campanha->system = $request->system;
+        $campanha->date = $request->date;
         $campanha->private = $request->private;
         $campanha->description = $request->description;
+        $campanha->items = $request->items;
 
         //Image Upload:
         if($request->hasFile('image') && $request->file('image')->isValid()){
@@ -41,6 +52,9 @@ class EventController extends Controller
             $campanha->image = 'tabletopBanner.jpg'; 
         }
 
+        $user = auth()->user();
+        $campanha->user_id = $user->id;
+
         $campanha->save();
 
         return redirect('/')->with('msg', "Campanha criada com sucesso!!");
@@ -49,7 +63,9 @@ class EventController extends Controller
     public function show($id){
 
         $campanha = Campanha::findOrFail($id);
-        return view('events.show', compact('campanha')); 
+        $eventOwner = User::where('id', $campanha->user_id)->first()->toArray();
+
+        return view('events.show', compact('campanha', 'eventOwner')); 
     }
 }
 

@@ -13,8 +13,14 @@
             <h1>{{ $campanha->title }}</h1>
             <p class="event-local"><ion-icon name="phone-portrait"></ion-icon>{{ $campanha->location }}</p>
             <p class="event-participants"><ion-icon name="people"></ion-icon> X Participants</p>
-            <p class="event-owner"><ion-icon name="star-outline"></ion-icon> Mestre</p>
+            <p class="event-owner"><ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name'] }}</p>
             <a href="#" class="btn btn-primary" id="event-submit">Participar</a>
+            <h3>A campanha conta com:</h3>
+            <ul id="items-list">
+                @foreach($campanha->items as $item)
+                    <li><ion-icon name="arrow-dropright"></ion-icon><span>{{ $item }} </span></li>
+                @endforeach
+            </ul>
         </div>
         <div class="col-md-12" id="description-container">
             <h3><ion-icon name="paper"></ion-icon> Enredo da campanha:</h3>
