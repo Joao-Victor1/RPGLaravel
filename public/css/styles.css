@@ -184,6 +184,21 @@ header{
     font-size: 12px;
 }
 
+/* Dashboard Page */
+.dashboard-title-container{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-campanhas-container td a{
+    text-decoration: none;
+    color: #212121;
+}
+
+.dashboard-campanhas-container td a:hover{
+    color: #422680;
+}
+
 /* Footer */
 
 footer{

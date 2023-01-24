@@ -38,6 +38,9 @@
         <div class="form-group">
             <label for="title">Especificações:</label>
             <div class="form-group">
+                <input type="checkbox" name="items[]" value="Sem especificação"> Sem especificação
+            </div>
+            <div class="form-group">
                 <input type="checkbox" name="items[]" value="Livros de complemento"> Livros de complemento
             </div>
             <div class="form-group">
