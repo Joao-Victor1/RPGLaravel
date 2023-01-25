@@ -12,9 +12,18 @@
         <div id="info-container" class="col-md-6">
             <h1>{{ $campanha->title }}</h1>
             <p class="event-local"><ion-icon name="phone-portrait"></ion-icon>{{ $campanha->location }}</p>
-            <p class="event-participants"><ion-icon name="people"></ion-icon> X Participants</p>
+            <p class="event-participants"><ion-icon name="people"></ion-icon> {{ count($campanha->users) }} Participante(s)</p>
             <p class="event-owner"><ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name'] }}</p>
-            <a href="#" class="btn btn-primary" id="event-submit">Participar</a>
+            <form action="/events/join/{{ $campanha->id }}" method="POSt">
+                @csrf
+                <a href="/events/join/{{ $campanha->id }}" 
+                class="btn btn-primary"
+                id="event-submit"
+                onclick="event.preventDefault();
+                this.closest('form').submit();">
+                Participar
+                </a>
+            </form>
             <h3>A campanha conta com:</h3>
             <ul id="items-list">
                 @foreach($campanha->items as $item)

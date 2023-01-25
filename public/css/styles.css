@@ -199,6 +199,18 @@ header{
     color: #422680;
 }
 
+.dashboard-campanhas-container form{
+    display: inline-block;
+}
+
+/* Edit Page */
+
+.image-preview{
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 /* Footer */
 
 footer{
@@ -214,3 +226,4 @@ footer{
 footer p{
     margin-bottom: 0;
 }
+

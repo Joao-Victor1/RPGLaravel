@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function campanhas(){
         return $this->hasMany('App\Models\Campanha');
     }
+
+    public function campanhasAsParticipants(){
+        return $this->belongsToMany('App\Models\Campanha');
+    }
 }
