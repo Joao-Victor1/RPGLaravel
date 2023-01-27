@@ -67,4 +67,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Project
 
-the aim of the project is to provide tabletop RPG players with a simple way to organize the creation of their campaigns, with dates, specifications and control of participants. Just as it is also possible for players to search for campaigns of their liking to be able to participate, make friends, etc.
+the aim of the project is to provide tabletop RPG players with a simple way to organize the creation of their campaigns, with dates, specifications and control of participants. Just as it is also possible for players to search for campaigns of their liking to be able to participate, make friends, and more.
