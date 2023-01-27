@@ -64,3 +64,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Project
+
+the aim of the project is to provide tabletop RPG players with a simple way to organize the creation of their campaigns, with dates, specifications and control of participants. Just as it is also possible for players to search for campaigns of their liking to be able to participate, make friends, etc.
