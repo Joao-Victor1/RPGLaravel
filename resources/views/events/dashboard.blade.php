@@ -67,7 +67,14 @@
                 <td>{{ count($campanha->users) }}</td>
                 <td>{{ date('d/m/Y', strtotime($campanha->date)) }}</td>
                 <td>
-                    <a href="#">Sair da campanha</a>
+                    <form action="/events/leave/{{ $campanha->id }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger">
+                            <ion-icon name="log-out"></ion-icon>
+                            Sair da campanha
+                        </button>
+                    </form>
                 </td>
         </tr>
         @endforeach

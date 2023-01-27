@@ -14,7 +14,8 @@
             <p class="event-local"><ion-icon name="phone-portrait"></ion-icon>{{ $campanha->location }}</p>
             <p class="event-participants"><ion-icon name="people"></ion-icon> {{ count($campanha->users) }} Participante(s)</p>
             <p class="event-owner"><ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name'] }}</p>
-            <form action="/events/join/{{ $campanha->id }}" method="POSt">
+            @if(!$hasUserJoined)
+            <form action="/events/join/{{ $campanha->id }}" method="POST">
                 @csrf
                 <a href="/events/join/{{ $campanha->id }}" 
                 class="btn btn-primary"
@@ -24,6 +25,11 @@
                 Participar
                 </a>
             </form>
+            @else
+            <div class="alert alert-info">
+                <p class="already-joined-msg">Você já está participando dessa campanha!</p>
+            </div>
+            @endif
             <h3>A campanha conta com:</h3>
             <ul id="items-list">
                 @foreach($campanha->items as $item)

@@ -63,9 +63,23 @@ class EventController extends Controller
     public function show($id){
 
         $campanha = Campanha::findOrFail($id);
+
+        $user = auth()->user();
+        $hasUserJoined = false;
+
+        if($user){
+            $userCampanhas = $user->campanhasAsParticipants->toArray();
+
+            foreach($userCampanhas as $userCampanha){
+                if($userCampanha['id'] == $id){
+                    $hasUserJoined = true;
+                }
+            }
+        }
+
         $eventOwner = User::where('id', $campanha->user_id)->first()->toArray();
 
-        return view('events.show', compact('campanha', 'eventOwner')); 
+        return view('events.show', compact('campanha', 'eventOwner', 'hasUserJoined'));  
     }
 
     public function dashboard(){
@@ -131,7 +145,7 @@ class EventController extends Controller
     public function leaveEvent($id){
         
         $user = auth()->user();
-        $user->camoanhasAsParticipants()->detach($id);
+        $user->campanhasAsParticipants()->detach($id);
 
         $campanha = Campanha::findOrFail($id);
 
